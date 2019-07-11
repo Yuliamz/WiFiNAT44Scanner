@@ -1,0 +1,4 @@
+#Wed Jul 10 15:56:46 COT 2019
+base.0=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-v4-18.0.0_a8fca9ffe94e31e8e13d3d789d1da5ae7b029788
+renamed.0=classes.dex
+file.0=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-v4-18.0.0_a8fca9ffe94e31e8e13d3d789d1da5ae7b029788\\classes.dex

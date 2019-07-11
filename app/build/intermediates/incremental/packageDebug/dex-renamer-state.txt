@@ -1,4 +1,4 @@
-#Wed Jul 10 19:48:10 COT 2019
+#Thu Jul 11 10:21:00 COT 2019
 base.0=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_7d3b4f47f24ed32bd7c43a3bdda473719c0de09f
 renamed.1=classes.dex
 renamed.0=classes2.dex

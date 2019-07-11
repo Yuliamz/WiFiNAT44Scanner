@@ -45,8 +45,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private boolean checkDataBase() {
         SQLiteDatabase checkDB = null;
         try {
-            String myPath = DB_PATH + DB_NAME;
-            checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+            checkDB = SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.OPEN_READONLY);
+            System.out.println("Base de datos existente en: "+checkDB.getPath());
+            Cursor c = checkDB.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
+
+            if (c.moveToFirst()) {
+                while ( !c.isAfterLast() ) {
+                    System.out.println("Tabla =>   "+c.getString(0));
+                    c.moveToNext();
+                }
+            }
+
         } catch (SQLiteException e) {
         }
         if (checkDB != null) {
@@ -57,7 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private void copyDataBase() throws IOException {
         InputStream myInput = myContext.getAssets().open(DB_NAME);
-        String outFileName = DB_PATH + DB_NAME;
+        String outFileName = DB_PATH;
         OutputStream myOutput = new FileOutputStream(outFileName);
         byte[] buffer = new byte[10];
         int length;
@@ -71,8 +80,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void openDataBase() throws SQLException {
-        String myPath = DB_PATH + DB_NAME;
-        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+
+        myDataBase = SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.OPEN_READONLY);
 
     }
 

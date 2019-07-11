@@ -6,22 +6,26 @@
     density="xxhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1562859390195"
+    timestamp="1562862265440"
     token="-3201944725444318838"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="154" />
+        duration="129" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="47" />
+        duration="7" />
     <task
         name="verifier"
-        duration="0" />
+        duration="2" />
+
+    <artifact
+        location="C:\Users\ACER1\Documents\wifiScanner-master\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
@@ -66,14 +70,6 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1562859038080"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\ACER1\Documents\wifiScanner-master\app\build\outputs\apk\app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
         timestamp="1562859233911"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
@@ -101,9 +97,6 @@
             location="C:\Users\ACER1\Documents\wifiScanner-master\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\ACER1\Documents\wifiScanner-master\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
             location="C:\Users\ACER1\Documents\wifiScanner-master\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
@@ -112,7 +105,19 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1562859390195"
-        verifier="COLD_SWAP_REQUESTED" />
+        timestamp="1562861787887"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\ACER1\Documents\wifiScanner-master\app\build\outputs\apk\app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1562862265440"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\ACER1\Documents\wifiScanner-master\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+    </build>
 
 </instant-run>

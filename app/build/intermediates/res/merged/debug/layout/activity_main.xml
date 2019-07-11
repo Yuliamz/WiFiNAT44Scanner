@@ -22,19 +22,4 @@
     </ScrollView>
 
 
-
-    <!--<ScrollView
-        android:id="@+id/textAreaScroller"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scrollbars="vertical" >
-
-        <TextView
-            android:id="@+id/mainText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            android:text="@string/hello_world" />
-    </ScrollView>!-->
-
 </RelativeLayout>

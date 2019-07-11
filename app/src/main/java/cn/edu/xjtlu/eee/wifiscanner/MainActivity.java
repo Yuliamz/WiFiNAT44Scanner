@@ -1,5 +1,6 @@
 package cn.edu.xjtlu.eee.wifiscanner;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -9,12 +10,16 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	//TextView mainText;
@@ -24,24 +29,74 @@ public class MainActivity extends Activity {
 	StringBuilder sb = new StringBuilder();
 	StringBuilder csv = new StringBuilder();
 	boolean scanFinished = false;
+	SQLiteDatabase database;
 	LinearLayout mainView;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		//mainText = (TextView) findViewById(R.id.mainText);
 		mainView = (LinearLayout) findViewById(R.id.linearLayout);
 		mainWifi = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 		receiverWifi = new WifiReceiver();
-		registerReceiver(receiverWifi, new IntentFilter(
-				WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+		registerReceiver(receiverWifi, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
 		mainWifi.startScan();
-		//mainText.setText("Starting Scan...\n");
+
+
+		loadDatabase();
+
 	}
 
+
+	void loadDatabase(){
+		DatabaseHelper myDbHelper = new DatabaseHelper(this);
+		try {
+			myDbHelper.createDataBase();
+		} catch (IOException ioe) {
+			throw new Error("Unable to create database");
+		}
+		try {
+			myDbHelper.openDataBase();
+			database = myDbHelper.getMyDataBase();
+
+		} catch (SQLException sqle) {
+			throw sqle;
+		}
+
+		/*Cursor c = database.query("router", null, null, null, null, null, null);
+		if (c.moveToFirst()) {
+			do {
+				System.out.println(c.getString(0)+", "+
+						c.getString(1)+", "+
+						c.getString(2)+", "+
+						c.getString(3)+", "+
+						c.getString(4)+", "+
+						c.getString(5)+", ");
+
+			} while (c.moveToNext());
+		}*/
+	}
+
+
+	String[] searchFor(String BSSID){
+		String[] campos = new String[] {"IP","PASSWORD"};
+		String[] args = new String[] {BSSID};
+
+		Cursor c = database.query("ROUTER", campos, "BSSID=?", args, null, null, null);
+
+		if (c.moveToFirst()) {
+				String ip= c.getString(0);
+				String password= c.getString(1);
+				System.out.println("IP: "+ip+"  ----------   PASSWORD: "+password);
+				return new String[] {ip,password};
+		}
+		return null;
+	}
+
+
+
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 0, 0, "Refresh");
-		menu.add(0, 1, 1, "Finish");
+		menu.add(0, 0, 0, "Escanear");
+		menu.add(0, 1, 1, "Salir");
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -49,11 +104,8 @@ public class MainActivity extends Activity {
 		switch (item.getItemId()) {
 		case 0:
 			mainWifi.startScan();
-			//mainText.setText("Starting Scan...\n");
 			break;
 		case 1:
-			// To return CSV-formatted text back to calling activity (e.g., MIT
-			// App Inventor App)
 			Intent scanResults = new Intent();
 			scanResults.putExtra("AP_LIST", csv.toString());
 			setResult(RESULT_OK, scanResults);
@@ -68,9 +120,6 @@ public class MainActivity extends Activity {
 	protected void onPause() {
 		super.onPause();
 		unregisterReceiver(receiverWifi);
-
-		// To return CSV-formatted text back to calling activity (e.g., MIT App
-		// Inventor App)
 		Intent scanResults = new Intent();
 		scanResults.putExtra("AP_LIST", csv.toString());
 		setResult(RESULT_OK, scanResults);
@@ -82,9 +131,6 @@ public class MainActivity extends Activity {
 		registerReceiver(receiverWifi, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
 	}
 
-	void showList(){
-
-	}
 
 	class WifiReceiver extends BroadcastReceiver {
 		public void onReceive(Context c, Intent intent) {
@@ -113,8 +159,14 @@ public class MainActivity extends Activity {
 			});
 
 			for (int i = 0; i < wifiList.size(); i++) {
-				mainView.addView(new ScanResultGeneralView(getApplicationContext(),new ScanResultTextView(getApplicationContext(),wifiList.get(i))));
-				//mainView.addView(new ScanResultTextView(getApplicationContext(),wifiList.get(i)));
+				ScanResult result = wifiList.get(i);
+				String[] ipass = searchFor(result.BSSID.toUpperCase());
+				ScanResultTextView view = new ScanResultTextView(getApplicationContext(),result);
+				if (ipass!=null){
+					view.setIP(ipass[0]);
+					view.setPASSWORD(ipass[1]);
+				}
+				mainView.addView(new ScanResultGeneralView(getApplicationContext(),view));
 
 				// SSID
 				sb.append("SSID: ").append((wifiList.get(i)).SSID);
@@ -142,10 +194,6 @@ public class MainActivity extends Activity {
 			}
 			System.out.println(csv);
 
-			//mainView.addView(new ScanResultView(getApplicationContext(),wifiList.get(0)));
-			//mainText.setText(sb);
-
-			// notify that Wi-Fi scan has finished
 			scanFinished = true;
 		}
 	}

@@ -27,6 +27,8 @@ public class ScanResultGeneralView extends LinearLayout {
         });
 
         this.addView(scanResultTextView,layoutParams);
+
         this.addView(button,layoutParams);
     }
+
 }

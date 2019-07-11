@@ -12,6 +12,7 @@ public class ScanResultTextView extends TextView {
     private String BSSID;
     private String CAPABILITIES;
     private int LEVEL;
+    private String IP;
     private String PASSWORD;
 
     public ScanResultTextView(Context context, ScanResult scanResult) {
@@ -33,6 +34,7 @@ public class ScanResultTextView extends TextView {
         stringBuilder.append("CIFRADO: ").append(CAPABILITIES).append("\n");
         stringBuilder.append("INTENSIDAD: ").append(LEVEL).append("\n");
         if (PASSWORD!=null){
+            stringBuilder.append("NAT44 IP: ").append(IP).append("\n");
             stringBuilder.append("CONTRASEÑA ENCONTRADA: ").append(PASSWORD).append("\n");
         }
         this.setText(stringBuilder);
@@ -62,5 +64,13 @@ public class ScanResultTextView extends TextView {
 
     public int getLEVEL() {
         return LEVEL;
+    }
+
+    public String getIP() {
+        return IP;
+    }
+
+    public void setIP(String IP) {
+        this.IP = IP;
     }
 }

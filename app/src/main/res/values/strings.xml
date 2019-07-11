@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">wifiScanner - By Yuliamz</string>
+    <string name="app_name">WiFi - By Yuliamz</string>
     <string name="action_settings">Configurar</string>
     <string name="hello_world">Let\'s scan</string>
 

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Jul 11 10:21:00 COT 2019
+#Thu Jul 11 10:30:40 COT 2019
 2.base=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\res\\resources-debug.ap_
 5.file=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\ic_launcher.png
 5.set=ANDROID_RESOURCE
@@ -9,10 +9,9 @@
 4.base=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_7d3b4f47f24ed32bd7c43a3bdda473719c0de09f
 7.file=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_main.xml
 7.set=ANDROID_RESOURCE
-count=9
+count=8
 0.file=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\assets\\debug\\Router
 5.base=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\res\\resources-debug.ap_
-8.file=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\menu-v11\\main.xml
 4.set=DEX
 6.base=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\res\\resources-debug.ap_
 1.file=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_107fe2cfc5e352a3d528fa04ef6d4abdb05fde80\\classes.dex
@@ -21,10 +20,8 @@ count=9
 2.file=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
 6.set=ANDROID_RESOURCE
 0.base=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\assets\\debug
-8.base=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\res\\resources-debug.ap_
 3.file=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\menu\\main.xml
 3.set=ANDROID_RESOURCE
 1.base=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_107fe2cfc5e352a3d528fa04ef6d4abdb05fde80
 4.file=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_7d3b4f47f24ed32bd7c43a3bdda473719c0de09f\\classes.dex
-8.set=ANDROID_RESOURCE
 0.set=ASSET

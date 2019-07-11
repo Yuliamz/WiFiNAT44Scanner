@@ -1,4 +1,10 @@
-#Wed Jul 10 15:56:46 COT 2019
-base.0=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-v4-18.0.0_a8fca9ffe94e31e8e13d3d789d1da5ae7b029788
+#Thu Jul 11 10:33:57 COT 2019
+renamed.2=classes2.dex
+renamed.1=classes3.dex
 renamed.0=classes.dex
-file.0=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-v4-18.0.0_a8fca9ffe94e31e8e13d3d789d1da5ae7b029788\\classes.dex
+base.2=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-25.3.1_8d7a1a7c04c5dc769f22fc01d4bd7d8d2ece4210
+base.1=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-v4-18.0.0_a8fca9ffe94e31e8e13d3d789d1da5ae7b029788
+base.0=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_f97804a07dcd7914cc559bbc9da95307d0178bee
+file.2=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-25.3.1_8d7a1a7c04c5dc769f22fc01d4bd7d8d2ece4210\\classes.dex
+file.1=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-v4-18.0.0_a8fca9ffe94e31e8e13d3d789d1da5ae7b029788\\classes.dex
+file.0=C\:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_f97804a07dcd7914cc559bbc9da95307d0178bee\\classes.dex

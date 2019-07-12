@@ -1,11 +1,11 @@
 /**
  * Automatically generated file. DO NOT MODIFY
  */
-package cn.edu.xjtlu.eee.wifiscanner;
+package com.yuliamz.wifiscanner;
 
 public final class BuildConfig {
   public static final boolean DEBUG = false;
-  public static final String APPLICATION_ID = "cn.edu.xjtlu.eee.wifiscanner";
+  public static final String APPLICATION_ID = "com.yuliamz.wifiscanner";
   public static final String BUILD_TYPE = "release";
   public static final String FLAVOR = "";
   public static final int VERSION_CODE = 1;

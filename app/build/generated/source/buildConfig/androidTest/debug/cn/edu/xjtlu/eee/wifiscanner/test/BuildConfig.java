@@ -1,11 +1,11 @@
 /**
  * Automatically generated file. DO NOT MODIFY
  */
-package cn.edu.xjtlu.eee.wifiscanner.test;
+package com.yuliamz.wifiscanner.test;
 
 public final class BuildConfig {
   public static final boolean DEBUG = Boolean.parseBoolean("true");
-  public static final String APPLICATION_ID = "cn.edu.xjtlu.eee.wifiscanner.test";
+  public static final String APPLICATION_ID = "com.yuliamz.wifiscanner.test";
   public static final String BUILD_TYPE = "debug";
   public static final String FLAVOR = "";
   public static final int VERSION_CODE = -1;

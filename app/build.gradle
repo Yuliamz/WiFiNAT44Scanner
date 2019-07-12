@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.3"
 
     defaultConfig {
-        applicationId "cn.edu.xjtlu.eee.wifiscanner"
+        applicationId "com.yuliamz.wifiscanner"
         minSdkVersion 14
         targetSdkVersion 18
     }

@@ -1,83 +1,106 @@
 package cn.edu.xjtlu.eee.wifiscanner;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.graphics.Color;
-import android.net.wifi.WifiConfiguration;
-import android.net.wifi.WifiManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class ScanResultGeneralView extends LinearLayout {
 
     LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
     Button button;
-
-    WifiConfiguration wifiConfig = new WifiConfiguration();
-
-    WifiManager wifiManager;
-
-    void connectTo(String SSID, String PASS){
-
-        wifiConfig.SSID = String.format("\"%s\"", SSID);
-        wifiConfig.preSharedKey = String.format("\"%s\"", PASS);
-
-        int netId = wifiManager.addNetwork(wifiConfig);
-        wifiManager.disconnect();
-        wifiManager.enableNetwork(netId, true);
-        wifiManager.reconnect();
-
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-       checkResult(wifiManager.getConnectionInfo().getNetworkId()!=-1);
-
-    }
+    ConnectionUtils utils;
+    private boolean connectedYet;
+    ScanResultTextView scan;
+    ClipboardManager clipboard;
+    View viewDivider;
 
     public ScanResultGeneralView(final Context context, final ScanResultTextView scan) {
         super(context);
         this.setOrientation(VERTICAL);
-        this.setPadding(0,10,0,0);
+        this.scan = scan;
+        this.addView(this.scan,layoutParams);
+        viewDivider = new View(context);
+        button = new Button(context);
+        button.setTextColor(Color.BLACK);
+        utils = new ConnectionUtils(context,this.scan.getSSID(),this.scan.getPASSWORD());
+        connectedYet = utils.isConnectedTo(this.scan.getBSSID());
+        clipboard = (ClipboardManager)  context.getSystemService(Context.CLIPBOARD_SERVICE);
+
+        addButton();
+        addDivider();
 
 
-        wifiManager = (WifiManager)context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+    }
+
+    void setButtonAsConnecting(){
+        button.setText(R.string.test_password);
+        button.setEnabled(false);
+    }
+
+    void addDivider(){
+        viewDivider.setBackgroundColor(Color.BLACK);
+        int dividerHeight = (int)getResources().getDisplayMetrics().density;
+        viewDivider.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dividerHeight));
+        this.addView(viewDivider);
+    }
 
 
-        this.addView(scan,layoutParams);
-
-        if (scan.getPASSWORD()!=null){
-            button = new Button(context);
-            button.setText("Conectar");
-            button.setTextColor(Color.BLACK);
-            button.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    System.out.println("Intenta conectar a: "+scan.getSSID()+" "+scan.getBSSID()+" "+scan.getPASSWORD());
-                    connectTo(scan.getSSID(),scan.getPASSWORD());
-                }
-            });
-
-            this.addView(button,layoutParams);
+    void addButton(){
+        if (connectedYet){
+            setButtonAsConnected();
+        }else{
+            if (this.scan.getPASSWORD()!=null){
+                setButtonAsUnconnected();
+            }else if(this.scan.getIP()!=null){
+                setButtonAsUndefined();
+            }
         }
     }
 
-    private void checkResult(boolean isSuccess)
-    {
-        if (isSuccess){
-            Toast.makeText(getContext(), "Conectado", Toast.LENGTH_SHORT).show();
-            button.setText("Ya estás conectado");
-            button.setEnabled(false);
-        }
+    void setButtonAsConnected(){
+        button.setText(R.string.wifi_connected);
+        button.setEnabled(false);
+        button.setTextColor(Color.BLUE);
+        this.addView(button,layoutParams);
+    }
 
-        else{
-            Toast.makeText(getContext(), "No se pudo conectar", Toast.LENGTH_SHORT).show();
-        }
+    void setButtonAsUndefined(){
+        button.setText(R.string.answer_developer);
+        button.setEnabled(true);
+        button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clipboard.setPrimaryClip(ClipData.newPlainText("IP",scan.getIP()+"-"+scan.getBSSID()));
+                Toast.makeText(getContext(), R.string.copied_wifi_info, Toast.LENGTH_LONG).show();
+            }
+        });
+        this.addView(button,layoutParams);
+    }
 
+    void setButtonAsUnconnected(){
+        button.setText(R.string.connect);
+
+        button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setButtonAsConnecting();
+                if (utils.connect()){
+                    button.setText(R.string.wifi_connected);
+                    button.setEnabled(false);
+                    button.setTextColor(Color.BLUE);
+                }
+            }
+        });
+
+        button.setEnabled(true);
+        this.addView(button,layoutParams);
     }
 
 }

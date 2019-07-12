@@ -2,6 +2,24 @@
 <items version="2" >
 
     <item
+        is-multidex="true"
+        jar="C:\Users\ACER1\Documents\wifiScanner-master\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="28cb28d865c274606759afdbc486bc5cb716aa77">
+        <dex dex="C:\Users\ACER1\Documents\wifiScanner-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_107fe2cfc5e352a3d528fa04ef6d4abdb05fde80\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ACER1\Documents\wifiScanner-master\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\ACER1\Documents\wifiScanner-master\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_7d3b4f47f24ed32bd7c43a3bdda473719c0de09f\classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="C:\Users\ACER1\.gradle\caches\modules-2\files-2.1\com.android.support\support-v4\18.0.0\44ec51e9d395a47aab135e5e1b556c0007442156\support-v4-18.0.0.jar"
         jumboMode="false"

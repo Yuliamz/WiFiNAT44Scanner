@@ -31,39 +31,27 @@
                     "startLine": 4,
                     "startColumn": 4,
                     "startOffset": 169,
-                    "endColumn": 54,
-                    "endOffset": 219
+                    "endColumn": 37,
+                    "endOffset": 202
                 },
                 "from": {
-                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml"
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 652,
+                        "endColumn": 37,
+                        "endOffset": 685
+                    }
                 }
             },
             {
                 "to": {
                     "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 224,
+                    "startOffset": 207,
                     "endColumn": 54,
-                    "endOffset": 274
-                },
-                "from": {
-                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 59,
-                        "endColumn": 54,
-                        "endOffset": 109
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 279,
-                    "endColumn": 51,
-                    "endOffset": 326
+                    "endOffset": 257
                 },
                 "from": {
                     "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml"
@@ -71,12 +59,212 @@
             },
             {
                 "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 262,
+                    "endColumn": 71,
+                    "endOffset": 329
+                },
+                "from": {
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 338,
+                        "endColumn": 71,
+                        "endOffset": 405
+                    }
+                }
+            },
+            {
+                "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 331,
-                    "endLine": 9,
+                    "startOffset": 334,
+                    "endColumn": 59,
+                    "endOffset": 389
+                },
+                "from": {
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 394,
+                    "endColumn": 60,
+                    "endOffset": 450
+                },
+                "from": {
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 524,
+                        "endColumn": 60,
+                        "endOffset": 580
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 455,
+                    "endColumn": 71,
+                    "endOffset": 522
+                },
+                "from": {
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 691,
+                        "endColumn": 71,
+                        "endOffset": 758
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 527,
+                    "endColumn": 44,
+                    "endOffset": 567
+                },
+                "from": {
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 572,
+                    "endColumn": 47,
+                    "endOffset": 615
+                },
+                "from": {
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 475,
+                        "endColumn": 47,
+                        "endOffset": 518
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 620,
+                    "endColumn": 64,
+                    "endOffset": 680
+                },
+                "from": {
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 586,
+                        "endColumn": 64,
+                        "endOffset": 646
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 685,
+                    "endColumn": 38,
+                    "endOffset": 719
+                },
+                "from": {
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 808,
+                        "endColumn": 38,
+                        "endOffset": 842
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 724,
+                    "endColumn": 51,
+                    "endOffset": 771
+                },
+                "from": {
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 776,
+                    "endColumn": 42,
+                    "endOffset": 814
+                },
+                "from": {
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 764,
+                        "endColumn": 42,
+                        "endOffset": 802
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 819,
+                    "endColumn": 62,
+                    "endOffset": 877
+                },
+                "from": {
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 411,
+                        "endColumn": 62,
+                        "endOffset": 469
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 882,
+                    "endColumn": 61,
+                    "endOffset": 939
+                },
+                "from": {
+                    "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 944,
+                    "endLine": 20,
                     "endColumn": 12,
-                    "endOffset": 409
+                    "endOffset": 1022
                 },
                 "from": {
                     "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\styles.xml"
@@ -84,12 +272,12 @@
             },
             {
                 "to": {
-                    "startLine": 10,
+                    "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 414,
-                    "endLine": 12,
+                    "startOffset": 1027,
+                    "endLine": 23,
                     "endColumn": 12,
-                    "endOffset": 481
+                    "endOffset": 1094
                 },
                 "from": {
                     "file": "C:\\Users\\ACER1\\Documents\\wifiScanner-master\\app\\src\\main\\res\\values\\styles.xml"

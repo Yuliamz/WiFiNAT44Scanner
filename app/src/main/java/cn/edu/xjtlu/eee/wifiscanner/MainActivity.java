@@ -22,9 +22,8 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	//TextView mainText;
-	WifiManager mainWifi;
-	WifiReceiver receiverWifi;
+	WifiManager wifiManager;
+	WifiReceiver wifiReceiver;
 	List<ScanResult> wifiList;
 	StringBuilder sb = new StringBuilder();
 	StringBuilder csv = new StringBuilder();
@@ -36,13 +35,21 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		mainView = (LinearLayout) findViewById(R.id.linearLayout);
-		mainWifi = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-		receiverWifi = new WifiReceiver();
-		registerReceiver(receiverWifi, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
-		mainWifi.startScan();
-
-
+		wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+		enableWifi();
+		wifiReceiver = new WifiReceiver();
+		registerReceiver(wifiReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+		wifiManager.startScan();
 		loadDatabase();
+	}
+
+	void enableWifi(){
+		try {
+			if (!wifiManager.isWifiEnabled()) wifiManager.setWifiEnabled(true);
+		}catch (NullPointerException e){
+			Toast.makeText(this, R.string.cant_enable_wifi, Toast.LENGTH_LONG).show();
+			e.printStackTrace();
+		}
 
 	}
 
@@ -61,19 +68,6 @@ public class MainActivity extends Activity {
 		} catch (SQLException sqle) {
 			throw sqle;
 		}
-
-		/*Cursor c = database.query("router", null, null, null, null, null, null);
-		if (c.moveToFirst()) {
-			do {
-				System.out.println(c.getString(0)+", "+
-						c.getString(1)+", "+
-						c.getString(2)+", "+
-						c.getString(3)+", "+
-						c.getString(4)+", "+
-						c.getString(5)+", ");
-
-			} while (c.moveToNext());
-		}*/
 	}
 
 
@@ -84,10 +78,7 @@ public class MainActivity extends Activity {
 		Cursor c = database.query("ROUTER", campos, "BSSID=?", args, null, null, null);
 
 		if (c.moveToFirst()) {
-				String ip= c.getString(0);
-				String password= c.getString(1);
-				System.out.println("IP: "+ip+"  ----------   PASSWORD: "+password);
-				return new String[] {ip,password};
+				return new String[] {c.getString(0),c.getString(1)};
 		}
 		return null;
 	}
@@ -95,15 +86,15 @@ public class MainActivity extends Activity {
 
 
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, 0, 0, "Escanear");
-		menu.add(0, 1, 1, "Salir");
+		menu.add(0, 0, 0, R.string.scann);
+		menu.add(0, 1, 1, R.string.exit);
 		return super.onCreateOptionsMenu(menu);
 	}
 
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 		switch (item.getItemId()) {
 		case 0:
-			mainWifi.startScan();
+			wifiManager.startScan();
 			break;
 		case 1:
 			Intent scanResults = new Intent();
@@ -119,7 +110,7 @@ public class MainActivity extends Activity {
 
 	protected void onPause() {
 		super.onPause();
-		unregisterReceiver(receiverWifi);
+		unregisterReceiver(wifiReceiver);
 		Intent scanResults = new Intent();
 		scanResults.putExtra("AP_LIST", csv.toString());
 		setResult(RESULT_OK, scanResults);
@@ -128,7 +119,7 @@ public class MainActivity extends Activity {
 
 	protected void onResume() {
 		super.onResume();
-		registerReceiver(receiverWifi, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+		registerReceiver(wifiReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
 	}
 
 
@@ -138,7 +129,7 @@ public class MainActivity extends Activity {
 
 			sb = new StringBuilder();
 			csv = new StringBuilder();
-			wifiList = mainWifi.getScanResults();
+			wifiList = wifiManager.getScanResults();
 
 			// prepare text for display and CSV table
 			sb.append("Number of APs Detected: ");

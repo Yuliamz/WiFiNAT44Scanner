@@ -2,10 +2,12 @@ package cn.edu.xjtlu.eee.wifiscanner;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.wifi.ScanResult;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -32,18 +34,21 @@ public class ScanResultTextView extends TextView {
 
     void showText(){
         SpannableStringBuilder stringBuilder = new SpannableStringBuilder();
-        stringBuilder.append("SSID: ").append(SSID).append("\n");
+        stringBuilder.append(getContext().getString(R.string.SSID)).append(": ").append(SSID).append("\n");
         stringBuilder.append("BSSID: ").append(BSSID).append("\n");
         stringBuilder.append("CIFRADO: ").append(CAPABILITIES).append("\n");
-        stringBuilder.append("INTENSIDAD: ").append(""+LEVEL).append("\n");
+        stringBuilder.append("INTENSIDAD: ").append(String.valueOf(LEVEL));
+        if (IP!=null){
+            SpannableString ip = new SpannableString("\nNAT44 IP: "+IP);
+            ip.setSpan(new StyleSpan(Typeface.BOLD),0,ip.length(),0);
+            stringBuilder.append(ip);
+        }
+
         if (PASSWORD!=null){
-
-            stringBuilder.append("NAT44 IP: ").append(IP).append("\n");
-
-            SpannableString string = new SpannableString("CONTRASEÑA ENCONTRADA: "+PASSWORD);
-            string.setSpan(new ForegroundColorSpan(Color.RED),0,string.length(),0);
-            stringBuilder.append(string);
-
+            SpannableString pass = new SpannableString("\nCONTRASEÑA ENCONTRADA: "+PASSWORD);
+            pass.setSpan(new StyleSpan(Typeface.BOLD),0,pass.length(),0);
+            pass.setSpan(new ForegroundColorSpan(Color.RED),0,pass.length(),0);
+            stringBuilder.append(pass);
         }
         this.setText(stringBuilder, BufferType.SPANNABLE);
     }

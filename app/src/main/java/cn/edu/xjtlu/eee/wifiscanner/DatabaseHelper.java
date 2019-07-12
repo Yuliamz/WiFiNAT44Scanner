@@ -80,9 +80,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void openDataBase() throws SQLException {
-
         myDataBase = SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.OPEN_READONLY);
-
     }
 
     @Override
@@ -104,7 +102,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 copyDataBase();
             } catch (IOException e) {
                 e.printStackTrace();
-
             }
     }
 

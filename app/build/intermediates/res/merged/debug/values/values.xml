@@ -2,9 +2,20 @@
 <resources>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="SSID">SSID</string>
     <string name="action_settings">Configurar</string>
-    <string name="app_name">WiFi - By Yuliamz</string>
+    <string name="answer_developer">Preguntar al desarrollador</string>
+    <string name="app_name">WiFi - By Yuliamz v0.6</string>
+    <string name="cant_connect">No se pudo conectar</string>
+    <string name="cant_enable_wifi">No se pudo activar el WiFi</string>
+    <string name="connect">Conectar</string>
+    <string name="connected">Conectado</string>
+    <string name="copied_wifi_info">Información copiada</string>
+    <string name="exit">Salir</string>
     <string name="hello_world">Let\'s scan</string>
+    <string name="scann">Escanear</string>
+    <string name="test_password">Probando contraseña…</string>
+    <string name="wifi_connected">Ya estás conectado</string>
     <style name="AppBaseTheme" parent="android:Theme.Light">
         
     </style>

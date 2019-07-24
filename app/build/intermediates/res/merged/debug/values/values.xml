@@ -10,7 +10,7 @@
     <string name="cant_enable_wifi">No se pudo activar el WiFi</string>
     <string name="connect">Conectar</string>
     <string name="connected">Conectado</string>
-    <string name="copied_wifi_info">Información copiada</string>
+    <string name="copied_wifi_info">Información copiada - Enviar al desarrollador</string>
     <string name="exit">Salir</string>
     <string name="hello_world">Let\'s scan</string>
     <string name="scann">Escanear</string>

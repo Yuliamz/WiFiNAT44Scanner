@@ -44,7 +44,7 @@ public class ScanResultTextView extends TextView {
             stringBuilder.append(ip);
         }
 
-        if (PASSWORD!=null){
+        if (PASSWORD!=null && !PASSWORD.trim().isEmpty()){
             SpannableString pass = new SpannableString("\nCONTRASEÑA ENCONTRADA: "+PASSWORD);
             pass.setSpan(new StyleSpan(Typeface.BOLD),0,pass.length(),0);
             pass.setSpan(new ForegroundColorSpan(Color.RED),0,pass.length(),0);

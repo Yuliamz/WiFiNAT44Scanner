@@ -10,7 +10,7 @@
     <string name="test_password">Probando contraseña…</string>
     <string name="connected">Conectado</string>
     <string name="cant_connect">No se pudo conectar</string>
-    <string name="copied_wifi_info">Información copiada</string>
+    <string name="copied_wifi_info">Información copiada - Enviar al desarrollador</string>
     <string name="SSID">SSID</string>
     <string name="cant_enable_wifi">No se pudo activar el WiFi</string>
     <string name="scann">Escanear</string>

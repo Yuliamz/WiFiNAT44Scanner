@@ -56,7 +56,7 @@ public class ScanResultGeneralView extends LinearLayout {
         if (connectedYet){
             setButtonAsConnected();
         }else{
-            if (this.scan.getPASSWORD()!=null){
+            if (this.scan.getPASSWORD()!=null && !this.scan.getPASSWORD().trim().isEmpty()){
                 setButtonAsUnconnected();
             }else if(this.scan.getIP()!=null){
                 setButtonAsUndefined();

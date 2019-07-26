@@ -173,10 +173,10 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 20 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 18 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Thu Jul 11 11:49:19 COT 2019      </nav>
+Check performed at Thu Jul 25 22:26:02 COT 2019      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -192,7 +192,6 @@ Check performed at Thu Jul 11 11:49:19 COT 2019      </nav>
       <a class="mdl-navigation__link" href="#UselessParent"><i class="material-icons warning-icon">warning</i>Useless parent layout (1)</a>
       <a class="mdl-navigation__link" href="#GoogleAppIndexingWarning"><i class="material-icons warning-icon">warning</i>Missing support for Firebase App Indexing (1)</a>
       <a class="mdl-navigation__link" href="#ViewConstructor"><i class="material-icons warning-icon">warning</i>Missing View constructors for XML inflation (2)</a>
-      <a class="mdl-navigation__link" href="#SetTextI18n"><i class="material-icons warning-icon">warning</i>TextView Internationalization (2)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -238,11 +237,6 @@ Check performed at Thu Jul 11 11:49:19 COT 2019      </nav>
 <tr>
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#ViewConstructor">ViewConstructor</a>: Missing View constructors for XML inflation</td></tr>
-<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Internationalization">Internationalization</a>
-</td></tr>
-<tr>
-<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#SetTextI18n">SetTextI18n</a>: TextView Internationalization</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (21)</a>
 </td></tr></table>
 <br/>              </div>
@@ -261,44 +255,44 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/MainActivity.java">../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/MainActivity.java</a>:163</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toUpperCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 160 </span>
-<span class="lineno"> 161 </span>            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; wifiList.size(); i++) {
-<span class="lineno"> 162 </span>                ScanResult result = wifiList.get(i);
-<span class="caretline"><span class="lineno"> 163 </span>                String[] ipass = searchFor(result.BSSID.<span class="warning">toUpperCase</span>());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 164 </span>                ScanResultTextView view = <span class="keyword">new</span> ScanResultTextView(getApplicationContext(),result);
-<span class="lineno"> 165 </span>                <span class="keyword">if</span> (ipass!=<span class="keyword">null</span>){
-<span class="lineno"> 166 </span>                    view.setIP(ipass[<span class="number">0</span>]);
+<span class="location"><a href="../../src/main/java/com/yuliamz/wifiscanner/MainActivity.java">../../src/main/java/com/yuliamz/wifiscanner/MainActivity.java</a>:154</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toUpperCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 151 </span>
+<span class="lineno"> 152 </span>            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; wifiList.size(); i++) {
+<span class="lineno"> 153 </span>                ScanResult result = wifiList.get(i);
+<span class="caretline"><span class="lineno"> 154 </span>                String[] ipass = searchFor(result.BSSID.<span class="warning">toUpperCase</span>());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 155 </span>                ScanResultTextView view = <span class="keyword">new</span> ScanResultTextView(getApplicationContext(),result);
+<span class="lineno"> 156 </span>                <span class="keyword">if</span> (ipass!=<span class="keyword">null</span>){
+<span class="lineno"> 157 </span>                    view.setIP(ipass[<span class="number">0</span>]);
 </pre>
 
-<span class="location"><a href="../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/MainActivity.java">../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/MainActivity.java</a>:177</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toUpperCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 174 </span>                csv.append((wifiList.get(i)).SSID);
-<span class="lineno"> 175 </span>                csv.append(<span class="string">","</span>);
-<span class="lineno"> 176 </span>                <span class="comment">// BSSID</span>
-<span class="caretline"><span class="lineno"> 177 </span>                sb.append(<span class="string">"BSSID: "</span>).append((wifiList.get(i)).BSSID.<span class="warning">toUpperCase</span>());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 178 </span>                sb.append(<span class="string">"\n"</span>);
-<span class="lineno"> 179 </span>                csv.append((wifiList.get(i)).BSSID.toUpperCase());
-<span class="lineno"> 180 </span>                csv.append(<span class="string">","</span>);
+<span class="location"><a href="../../src/main/java/com/yuliamz/wifiscanner/MainActivity.java">../../src/main/java/com/yuliamz/wifiscanner/MainActivity.java</a>:168</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toUpperCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 165 </span>                csv.append((wifiList.get(i)).SSID);
+<span class="lineno"> 166 </span>                csv.append(<span class="string">","</span>);
+<span class="lineno"> 167 </span>                <span class="comment">// BSSID</span>
+<span class="caretline"><span class="lineno"> 168 </span>                sb.append(<span class="string">"BSSID: "</span>).append((wifiList.get(i)).BSSID.<span class="warning">toUpperCase</span>());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 169 </span>                sb.append(<span class="string">"\n"</span>);
+<span class="lineno"> 170 </span>                csv.append((wifiList.get(i)).BSSID.toUpperCase());
+<span class="lineno"> 171 </span>                csv.append(<span class="string">","</span>);
 </pre>
 
-<span class="location"><a href="../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/MainActivity.java">../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/MainActivity.java</a>:179</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toUpperCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 176 </span>                <span class="comment">// BSSID</span>
-<span class="lineno"> 177 </span>                sb.append(<span class="string">"BSSID: "</span>).append((wifiList.get(i)).BSSID.toUpperCase());
-<span class="lineno"> 178 </span>                sb.append(<span class="string">"\n"</span>);
-<span class="caretline"><span class="lineno"> 179 </span>                csv.append((wifiList.get(i)).BSSID.<span class="warning">toUpperCase</span>());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 180 </span>                csv.append(<span class="string">","</span>);
-<span class="lineno"> 181 </span>                <span class="comment">// capabilities</span>
-<span class="lineno"> 182 </span>                sb.append(<span class="string">"Capabilities: "</span>).append((wifiList.get(<span class="number">0</span>)).capabilities);
+<span class="location"><a href="../../src/main/java/com/yuliamz/wifiscanner/MainActivity.java">../../src/main/java/com/yuliamz/wifiscanner/MainActivity.java</a>:170</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toUpperCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 167 </span>                <span class="comment">// BSSID</span>
+<span class="lineno"> 168 </span>                sb.append(<span class="string">"BSSID: "</span>).append((wifiList.get(i)).BSSID.toUpperCase());
+<span class="lineno"> 169 </span>                sb.append(<span class="string">"\n"</span>);
+<span class="caretline"><span class="lineno"> 170 </span>                csv.append((wifiList.get(i)).BSSID.<span class="warning">toUpperCase</span>());&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 171 </span>                csv.append(<span class="string">","</span>);
+<span class="lineno"> 172 </span>                <span class="comment">// capabilities</span>
+<span class="lineno"> 173 </span>                sb.append(<span class="string">"Capabilities: "</span>).append((wifiList.get(<span class="number">0</span>)).capabilities);
 </pre>
 
-<span class="location"><a href="../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/ScanResultTextView.java">../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/ScanResultTextView.java</a>:24</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toUpperCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
-<span class="lineno"> 21 </span>    <span class="keyword">public</span> ScanResultTextView(Context context, ScanResult scanResult) {
-<span class="lineno"> 22 </span>        <span class="keyword">super</span>(context);
-<span class="lineno"> 23 </span>        SSID = scanResult.SSID;
-<span class="caretline"><span class="lineno"> 24 </span>        BSSID = scanResult.BSSID.<span class="warning">toUpperCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 25 </span>        CAPABILITIES = scanResult.capabilities;
-<span class="lineno"> 26 </span>        LEVEL = scanResult.level;
-<span class="lineno"> 27 </span>
+<span class="location"><a href="../../src/main/java/com/yuliamz/wifiscanner/ScanResultTextView.java">../../src/main/java/com/yuliamz/wifiscanner/ScanResultTextView.java</a>:26</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>toUpperCase(Locale)</code> instead. For strings meant to be internal use <code>Locale.ROOT</code>, otherwise <code>Locale.getDefault()</code>.</span><br /><pre class="errorlines">
+<span class="lineno"> 23 </span>    <span class="keyword">public</span> ScanResultTextView(Context context, ScanResult scanResult) {
+<span class="lineno"> 24 </span>        <span class="keyword">super</span>(context);
+<span class="lineno"> 25 </span>        SSID = scanResult.SSID;
+<span class="caretline"><span class="lineno"> 26 </span>        BSSID = scanResult.BSSID.<span class="warning">toUpperCase</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 27 </span>        CAPABILITIES = scanResult.capabilities;
+<span class="lineno"> 28 </span>        LEVEL = scanResult.level;
+<span class="lineno"> 29 </span>
 </pre>
 
 </div>
@@ -351,7 +345,7 @@ Dismiss</button>            </div>
 
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:10</span>: <span class="message">Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details.</span><br /><pre class="errorlines">
 <span class="lineno">  7 </span>    defaultConfig {
-<span class="lineno">  8 </span>        applicationId <span class="string">"cn.edu.xjtlu.eee.wifiscanner"</span>
+<span class="lineno">  8 </span>        applicationId <span class="string">"com.yuliamz.wifiscanner"</span>
 <span class="lineno">  9 </span>        minSdkVersion <span class="number">14</span>
 <span class="caretline"><span class="lineno"> 10 </span>        <span class="warning">targetSdkVersion <span class="number">18</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 11 </span>    }
@@ -443,7 +437,7 @@ Dismiss</button>            </div>
 <div class="issue">
 <div class="warningslist">
 <span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:8</span>: <span class="message">This <code>minSdkVersion</code> value (<code>8</code>) is not used; it is always overridden by the value specified in the Gradle build script (<code>14</code>)</span><br /><pre class="errorlines">
-<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">versionName</span>=<span class="value">"1.1"</span> >
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">versionName</span>=<span class="value">"0.9"</span> >
 <span class="lineno">  6 </span>
 <span class="lineno">  7 </span>    <span class="tag">&lt;uses-sdk</span><span class="attribute">
 </span><span class="caretline"><span class="lineno">  8 </span><span class="attribute">        </span><span class="warning"><span class="prefix">android:</span><span class="attribute">minSdkVersion</span>=<span class="value">"8"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -499,7 +493,7 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/DatabaseHelper.java">../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/DatabaseHelper.java</a>:50</span>: <span class="message">This <code>Cursor</code> should be freed up after use with <code>#close()</code></span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/java/com/yuliamz/wifiscanner/DatabaseHelper.java">../../src/main/java/com/yuliamz/wifiscanner/DatabaseHelper.java</a>:50</span>: <span class="message">This <code>Cursor</code> should be freed up after use with <code>#close()</code></span><br /><pre class="errorlines">
 <span class="lineno">  47 </span>  <span class="keyword">try</span> {
 <span class="lineno">  48 </span>      checkDB = SQLiteDatabase.openDatabase(DB_PATH, <span class="keyword">null</span>, SQLiteDatabase.OPEN_READONLY);
 <span class="lineno">  49 </span>      System.out.println(<span class="string">"Base de datos existente en: "</span>+checkDB.getPath());
@@ -509,14 +503,14 @@ Dismiss</button>            </div>
 <span class="lineno">  53 </span>          <span class="keyword">while</span> ( !c.isAfterLast() ) {
 </pre>
 
-<span class="location"><a href="../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/MainActivity.java">../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/MainActivity.java</a>:84</span>: <span class="message">This <code>Cursor</code> should be freed up after use with <code>#close()</code></span><br /><pre class="errorlines">
-<span class="lineno">  81 </span>        String[] campos = <span class="keyword">new</span> String[] {<span class="string">"IP"</span>,<span class="string">"PASSWORD"</span>};
-<span class="lineno">  82 </span>        String[] args = <span class="keyword">new</span> String[] {BSSID};
-<span class="lineno">  83 </span>
-<span class="caretline"><span class="lineno">  84 </span>        Cursor c = database.<span class="warning">query</span>(<span class="string">"ROUTER"</span>, campos, <span class="string">"BSSID=?"</span>, args, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  85 </span>
-<span class="lineno">  86 </span>        <span class="keyword">if</span> (c.moveToFirst()) {
-<span class="lineno">  87 </span>                String ip= c.getString(<span class="number">0</span>);
+<span class="location"><a href="../../src/main/java/com/yuliamz/wifiscanner/MainActivity.java">../../src/main/java/com/yuliamz/wifiscanner/MainActivity.java</a>:78</span>: <span class="message">This <code>Cursor</code> should be freed up after use with <code>#close()</code></span><br /><pre class="errorlines">
+<span class="lineno">  75 </span>        String[] campos = <span class="keyword">new</span> String[] {<span class="string">"IP"</span>,<span class="string">"PASSWORD"</span>};
+<span class="lineno">  76 </span>        String[] args = <span class="keyword">new</span> String[] {BSSID};
+<span class="lineno">  77 </span>
+<span class="caretline"><span class="lineno">  78 </span>        Cursor c = database.<span class="warning">query</span>(<span class="string">"ROUTER"</span>, campos, <span class="string">"BSSID=?"</span>, args, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  79 </span>
+<span class="lineno">  80 </span>        <span class="keyword">if</span> (c.moveToFirst()) {
+<span class="lineno">  81 </span>                <span class="keyword">return</span> <span class="keyword">new</span> String[] {c.getString(<span class="number">0</span>),c.getString(<span class="number">1</span>)};
 </pre>
 
 </div>
@@ -561,22 +555,23 @@ Dismiss</button>            </div>
 </span><span class="lineno">  4 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/action_settings"</span></pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:5</span>: <span class="message">The resource <code>R.string.action_settings</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 2 </span><span class="tag">&lt;resources></span>
-<span class="lineno"> 3 </span>
-<span class="lineno"> 4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>WiFi - By Yuliamz<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 5 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"action_settings"</span></span>>Configurar<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"hello_world"</span>>Let\'s scan<span class="tag">&lt;/string></span>
-<span class="lineno"> 7 </span>
-<span class="lineno"> 8 </span><span class="tag">&lt;/resources></span>
+<span class="lineno">  2 </span><span class="tag">&lt;resources></span>
+<span class="lineno">  3 </span>
+<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>WiFi - By Yuliamz v0.9<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno">  5 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"action_settings"</span></span>>Configurar<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"hello_world"</span>>Let\'s scan<span class="tag">&lt;/string></span>
+<span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"wifi_connected"</span>>Ya estás conectado<span class="tag">&lt;/string></span>
+<span class="lineno">  8 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"connect"</span>>Conectar<span class="tag">&lt;/string></span>
 </pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:6</span>: <span class="message">The resource <code>R.string.hello_world</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 3 </span>
-<span class="lineno"> 4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>WiFi - By Yuliamz<span class="tag">&lt;/string></span>
-<span class="lineno"> 5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"action_settings"</span>>Configurar<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 6 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"hello_world"</span></span>>Let\'s scan<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 7 </span>
-<span class="lineno"> 8 </span><span class="tag">&lt;/resources></span>
+<span class="lineno">  3 </span>
+<span class="lineno">  4 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>WiFi - By Yuliamz v0.9<span class="tag">&lt;/string></span>
+<span class="lineno">  5 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"action_settings"</span>>Configurar<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"hello_world"</span></span>>Let\'s scan<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"wifi_connected"</span>>Ya estás conectado<span class="tag">&lt;/string></span>
+<span class="lineno">  8 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"connect"</span>>Conectar<span class="tag">&lt;/string></span>
+<span class="lineno">  9 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"answer_developer"</span>>Preguntar al desarrollador<span class="tag">&lt;/string></span>
 </pre>
 
 </div>
@@ -708,24 +703,24 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/ScanResultGeneralView.java">../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/ScanResultGeneralView.java</a>:13</span>: <span class="message">Custom view <code>ScanResultGeneralView</code> is missing constructor used by tools: <code>(Context)</code> or <code>(Context,AttributeSet)</code> or <code>(Context,AttributeSet,int)</code></span><br /><pre class="errorlines">
-<span class="lineno"> 10 </span><span class="keyword">import</span> android.widget.LinearLayout;
-<span class="lineno"> 11 </span><span class="keyword">import</span> android.widget.Toast;
-<span class="lineno"> 12 </span>
-<span class="caretline"><span class="lineno"> 13 </span><span class="keyword">public</span> <span class="keyword">class</span> <span class="warning">ScanResultGeneralView</span> <span class="keyword">extends</span> LinearLayout {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 14 </span>
-<span class="lineno"> 15 </span>    LayoutParams layoutParams = <span class="keyword">new</span> LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-<span class="lineno"> 16 </span>    Button button;
+<span class="location"><a href="../../src/main/java/com/yuliamz/wifiscanner/ScanResultGeneralView.java">../../src/main/java/com/yuliamz/wifiscanner/ScanResultGeneralView.java</a>:14</span>: <span class="message">Custom view <code>ScanResultGeneralView</code> is missing constructor used by tools: <code>(Context)</code> or <code>(Context,AttributeSet)</code> or <code>(Context,AttributeSet,int)</code></span><br /><pre class="errorlines">
+<span class="lineno">  11 </span><span class="keyword">import</span> android.widget.RelativeLayout;
+<span class="lineno">  12 </span><span class="keyword">import</span> android.widget.Toast;
+<span class="lineno">  13 </span>
+<span class="caretline"><span class="lineno">  14 </span><span class="keyword">public</span> <span class="keyword">class</span> <span class="warning">ScanResultGeneralView</span> <span class="keyword">extends</span> LinearLayout {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  15 </span>
+<span class="lineno">  16 </span>    LayoutParams layoutParams = <span class="keyword">new</span> LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+<span class="lineno">  17 </span>    Button button;
 </pre>
 
-<span class="location"><a href="../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/ScanResultTextView.java">../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/ScanResultTextView.java</a>:13</span>: <span class="message">Custom view <code>ScanResultTextView</code> is missing constructor used by tools: <code>(Context)</code> or <code>(Context,AttributeSet)</code> or <code>(Context,AttributeSet,int)</code></span><br /><pre class="errorlines">
-<span class="lineno"> 10 </span><span class="keyword">import</span> android.widget.LinearLayout;
-<span class="lineno"> 11 </span><span class="keyword">import</span> android.widget.TextView;
-<span class="lineno"> 12 </span>
-<span class="caretline"><span class="lineno"> 13 </span><span class="keyword">public</span> <span class="keyword">class</span> <span class="warning">ScanResultTextView</span> <span class="keyword">extends</span> TextView {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 14 </span>    <span class="keyword">private</span> String SSID;
-<span class="lineno"> 15 </span>    <span class="keyword">private</span> String BSSID;
-<span class="lineno"> 16 </span>    <span class="keyword">private</span> String CAPABILITIES;
+<span class="location"><a href="../../src/main/java/com/yuliamz/wifiscanner/ScanResultTextView.java">../../src/main/java/com/yuliamz/wifiscanner/ScanResultTextView.java</a>:15</span>: <span class="message">Custom view <code>ScanResultTextView</code> is missing constructor used by tools: <code>(Context)</code> or <code>(Context,AttributeSet)</code> or <code>(Context,AttributeSet,int)</code></span><br /><pre class="errorlines">
+<span class="lineno"> 12 </span><span class="keyword">import</span> android.widget.LinearLayout;
+<span class="lineno"> 13 </span><span class="keyword">import</span> android.widget.TextView;
+<span class="lineno"> 14 </span>
+<span class="caretline"><span class="lineno"> 15 </span><span class="keyword">public</span> <span class="keyword">class</span> <span class="warning">ScanResultTextView</span> <span class="keyword">extends</span> TextView {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 16 </span>    <span class="keyword">private</span> String SSID;
+<span class="lineno"> 17 </span>    <span class="keyword">private</span> String BSSID;
+<span class="lineno"> 18 </span>    <span class="keyword">private</span> String CAPABILITIES;
 </pre>
 
 </div>
@@ -760,69 +755,8 @@ Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id
 Dismiss</button>            </div>
             </div>
           </section>
-<a name="Internationalization"></a>
-<a name="SetTextI18n"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="card10" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">TextView Internationalization</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/ScanResultGeneralView.java">../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/ScanResultGeneralView.java</a>:55</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 52 </span>
-<span class="lineno"> 53 </span>        <span class="keyword">if</span> (scan.getPASSWORD()!=<span class="keyword">null</span>){
-<span class="lineno"> 54 </span>            button = <span class="keyword">new</span> Button(context);
-<span class="caretline"><span class="lineno"> 55 </span>            button.setText(<span class="warning"><span class="string">"Conectar"</span></span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 56 </span>            button.setTextColor(Color.BLACK);
-<span class="lineno"> 57 </span>            button.setOnClickListener(<span class="keyword">new</span> OnClickListener() {
-<span class="lineno"> 58 </span>                <span class="annotation">@Override</span>
-</pre>
-
-<span class="location"><a href="../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/ScanResultGeneralView.java">../../src/main/java/cn/edu/xjtlu/eee/wifiscanner/ScanResultGeneralView.java</a>:73</span>: <span class="message">String literal in <code>setText</code> can not be translated. Use Android resources instead.</span><br /><pre class="errorlines">
-<span class="lineno"> 70 </span>    {
-<span class="lineno"> 71 </span>        <span class="keyword">if</span> (isSuccess){
-<span class="lineno"> 72 </span>            Toast.makeText(getContext(), <span class="string">"Conectado"</span>, Toast.LENGTH_SHORT).show();
-<span class="caretline"><span class="lineno"> 73 </span>            button.setText(<span class="warning"><span class="string">"Ya estás conectado"</span></span>);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 74 </span>            button.setEnabled(<span class="keyword">false</span>);
-<span class="lineno"> 75 </span>        }
-<span class="lineno"> 76 </span>
-</pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationSetTextI18n" style="display: none;">
-When calling <code>TextView#setText</code><br/>
-* Never call <code>Number#toString()</code> to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using <code>String#format</code> with proper format specifications (<code>%d</code> or <code>%f</code>) instead.<br/>
-* Do not pass a string literal (e.g. "Hello") to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.<br/>
-* Do not build messages by concatenating text chunks. Such messages can not be properly translated.<br/><div class="moreinfo">More info: <a href="http://developer.android.com/guide/topics/resources/localization.html">http://developer.android.com/guide/topics/resources/localization.html</a>
-</div><br/>To suppress this error, use the issue id "SetTextI18n" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">SetTextI18n</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Internationalization</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Warning</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 6/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationSetTextI18nLink" onclick="reveal('explanationSetTextI18n');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="card10Link" onclick="hideid('card10');">
-Dismiss</button>            </div>
-            </div>
-          </section>
 <a name="MissingIssues"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="card11" style="display: block;">
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="card10" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">Disabled Checks</h2>
@@ -1064,12 +998,12 @@ To suppress this error, use the issue id "UnusedIds" as explained in the <a href
 </div>              </div>
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SuppressedIssuesLink" onclick="reveal('SuppressedIssues');">
-List Missing Issues</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="card11Link" onclick="hideid('card11');">
+List Missing Issues</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="card10Link" onclick="hideid('card10');">
 Dismiss</button>            </div>
             </div>
           </section>
 <a name="SuppressInfo"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="card12" style="display: block;">
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="card11" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">Suppressing Warnings and Errors</h2>

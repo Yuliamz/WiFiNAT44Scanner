@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">WiFi - By Yuliamz v0.6</string>
+    <string name="app_name">WiFi - By Yuliamz v0.9</string>
     <string name="action_settings">Configurar</string>
     <string name="hello_world">Let\'s scan</string>
     <string name="wifi_connected">Ya estás conectado</string>

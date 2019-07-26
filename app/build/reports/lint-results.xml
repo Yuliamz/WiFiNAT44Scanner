@@ -14,8 +14,8 @@
         errorLine1="    String[] ipass = searchFor(result.BSSID.toUpperCase());"
         errorLine2="                                            ~~~~~~~~~~~">
         <location
-            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\cn\edu\xjtlu\eee\wifiscanner\MainActivity.java"
-            line="163"
+            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\com\yuliamz\wifiscanner\MainActivity.java"
+            line="154"
             column="45"/>
     </issue>
 
@@ -32,8 +32,8 @@
         errorLine1="    sb.append(&quot;BSSID: &quot;).append((wifiList.get(i)).BSSID.toUpperCase());"
         errorLine2="                                                        ~~~~~~~~~~~">
         <location
-            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\cn\edu\xjtlu\eee\wifiscanner\MainActivity.java"
-            line="177"
+            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\com\yuliamz\wifiscanner\MainActivity.java"
+            line="168"
             column="57"/>
     </issue>
 
@@ -50,8 +50,8 @@
         errorLine1="    csv.append((wifiList.get(i)).BSSID.toUpperCase());"
         errorLine2="                                       ~~~~~~~~~~~">
         <location
-            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\cn\edu\xjtlu\eee\wifiscanner\MainActivity.java"
-            line="179"
+            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\com\yuliamz\wifiscanner\MainActivity.java"
+            line="170"
             column="40"/>
     </issue>
 
@@ -68,8 +68,8 @@
         errorLine1="        BSSID = scanResult.BSSID.toUpperCase();"
         errorLine2="                                 ~~~~~~~~~~~">
         <location
-            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\cn\edu\xjtlu\eee\wifiscanner\ScanResultTextView.java"
-            line="24"
+            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\com\yuliamz\wifiscanner\ScanResultTextView.java"
+            line="26"
             column="34"/>
     </issue>
 
@@ -171,7 +171,7 @@
         errorLine1="            Cursor c = checkDB.rawQuery(&quot;SELECT name FROM sqlite_master WHERE type=&apos;table&apos;&quot;, null);"
         errorLine2="                               ~~~~~~~~">
         <location
-            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\cn\edu\xjtlu\eee\wifiscanner\DatabaseHelper.java"
+            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\com\yuliamz\wifiscanner\DatabaseHelper.java"
             line="50"
             column="32"/>
     </issue>
@@ -187,8 +187,8 @@
         errorLine1="  Cursor c = database.query(&quot;ROUTER&quot;, campos, &quot;BSSID=?&quot;, args, null, null, null);"
         errorLine2="                      ~~~~~">
         <location
-            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\cn\edu\xjtlu\eee\wifiscanner\MainActivity.java"
-            line="84"
+            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\com\yuliamz\wifiscanner\MainActivity.java"
+            line="78"
             column="23"/>
     </issue>
 
@@ -289,8 +289,8 @@
         errorLine1="public class ScanResultGeneralView extends LinearLayout {"
         errorLine2="             ~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\cn\edu\xjtlu\eee\wifiscanner\ScanResultGeneralView.java"
-            line="13"
+            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\com\yuliamz\wifiscanner\ScanResultGeneralView.java"
+            line="14"
             column="14"/>
     </issue>
 
@@ -305,45 +305,9 @@
         errorLine1="public class ScanResultTextView extends TextView {"
         errorLine2="             ~~~~~~~~~~~~~~~~~~">
         <location
-            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\cn\edu\xjtlu\eee\wifiscanner\ScanResultTextView.java"
-            line="13"
+            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\com\yuliamz\wifiscanner\ScanResultTextView.java"
+            line="15"
             column="14"/>
-    </issue>
-
-    <issue
-        id="SetTextI18n"
-        severity="Warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead."
-        category="Internationalization"
-        priority="6"
-        summary="TextView Internationalization"
-        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
-        url="http://developer.android.com/guide/topics/resources/localization.html"
-        urls="http://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="            button.setText(&quot;Conectar&quot;);"
-        errorLine2="                           ~~~~~~~~~~">
-        <location
-            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\cn\edu\xjtlu\eee\wifiscanner\ScanResultGeneralView.java"
-            line="55"
-            column="28"/>
-    </issue>
-
-    <issue
-        id="SetTextI18n"
-        severity="Warning"
-        message="String literal in `setText` can not be translated. Use Android resources instead."
-        category="Internationalization"
-        priority="6"
-        summary="TextView Internationalization"
-        explanation="When calling `TextView#setText`&#xA;* Never call `Number#toString()` to format numbers; it will not handle fraction separators and locale-specific digits properly. Consider using `String#format` with proper format specifications (`%d` or `%f`) instead.&#xA;* Do not pass a string literal (e.g. &quot;Hello&quot;) to display text. Hardcoded text can not be properly translated to other languages. Consider using Android resource strings instead.&#xA;* Do not build messages by concatenating text chunks. Such messages can not be properly translated."
-        url="http://developer.android.com/guide/topics/resources/localization.html"
-        urls="http://developer.android.com/guide/topics/resources/localization.html"
-        errorLine1="            button.setText(&quot;Ya estás conectado&quot;);"
-        errorLine2="                           ~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="C:\Users\ACER1\Documents\wifiScanner-master\app\src\main\java\cn\edu\xjtlu\eee\wifiscanner\ScanResultGeneralView.java"
-            line="73"
-            column="28"/>
     </issue>
 
 </issues>
